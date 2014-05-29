@@ -10,7 +10,7 @@
 ################################################################################
 
 superagent = require 'superagent'
-timer = require '../lib/timer.coffee'
+timer = require '../lib/timer'
 
 exports.route = (request, response) ->
 

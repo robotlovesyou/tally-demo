@@ -12,16 +12,17 @@ Check out the [Hello Badge series of introductory articles](https://github.com/a
 Installation
 ---
 
-Install Tally:
+
+Install CoffeeScript
 
 ```bash
-npm install tally
+npm install -g coffee-script
 ```
 
-Change to the Tally folder:
+Install the required node modules:
 
 ```bash
-cd node_modules/tally/
+npm install
 ```
 
 Start the server:
@@ -35,7 +36,7 @@ Go to [http://localhost:3000](http://localhost:3000/) and play with the examples
 Web site
 ---
 
-The Tally web site is just an instance of the Tally project running on Nodejitsu (exactly what you would see on your local machine if you followed the steps under Installation, above.)
+The Tally web site is just an instance of the Tally-demo project running on Nodejitsu (exactly what you would see on your local machine if you followed the steps under Installation, above.)
 
 Check it out at:
 

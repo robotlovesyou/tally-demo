@@ -1,0 +1,3 @@
+[submodule "node_modules/tally"]
+	path = node_modules/tally
+	url = git@github.com:robotlovesyou/tally.git

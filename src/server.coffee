@@ -10,29 +10,28 @@
 ################################################################################
 
 require('nodefly').profile(
-    'ec5f2af70b32cb4ce18952bc522ea041',
-    ['Tally', process.env.SUBDOMAIN]
+  'ec5f2af70b32cb4ce18952bc522ea041',
+  ['Tally', process.env.SUBDOMAIN]
 )
 
 express = require 'express'
-tally = require './lib/tally-express.coffee'
-
+tally = require 'tally'
 superagent = require 'superagent'
 
 # Helper: create a route from a route name (e.g., /simple -> /routes/simple.coffee)
 createRoute = (routeName) ->
-	path = if routeName == '/' then 'main' else routeName[1..]
-	route = require('./routes/' + path + '.coffee').route
-	app.get routeName, route
+  path = if routeName == '/' then 'main' else routeName[1..]
+  route = require("./routes/#{path}").route
+  app.get routeName, route
 
 #
 # Set up Express with Tally as the templating engine.
 #
 app = express()
-app.engine 'html', (require './lib/tally-express.coffee').__express
+app.engine 'html', tally.__express
 app.set 'view engine', 'html'
-app.set 'views', __dirname + '/views'
-app.use express.static('views')
+app.set 'views', "#{__dirname}/../views"
+app.use express.static("#{__dirname}/../views")
 
 # Index: links to the readme and examples.
 createRoute '/'
