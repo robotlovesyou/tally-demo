@@ -9,19 +9,16 @@
     },
     "main": "./lib/tally-express.coffee",
     "scripts": {
-        "start": "coffee server.coffee",
-        "test": "node_modules/.bin/mocha test/*.coffee -r coffee-script -r should -R spec",
-        "posttest": "publish"
+        "start": "coffee -co build/ src/; node build/server.js"
     },
     "dependencies": {
-        "jsdom": "0.5.1",
-        "express": "3.0.x",
-        "superagent": "0.12.4",
-        "ghm": "1.0.0-3",
+        "express": "4.3.2",
+        "superagent": "0.18.0",
+        "ghm": "1.0.0-5",
         "nodefly": "stable"
     },
     "devDependencies": {
-        "coffee-script": "1.6.1",
+        "coffee-script": "1.7.1",
         "should": "*",
         "mocha": "*",
         "publish": "*"
