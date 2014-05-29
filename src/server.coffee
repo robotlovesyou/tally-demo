@@ -16,6 +16,7 @@ require('nodefly').profile(
 
 express = require 'express'
 tally = require 'tally'
+
 superagent = require 'superagent'
 
 # Helper: create a route from a route name (e.g., /simple -> /routes/simple.coffee)
@@ -31,7 +32,7 @@ app = express()
 app.engine 'html', tally.__express
 app.set 'view engine', 'html'
 app.set 'views', "#{__dirname}/../views"
-app.use express.static("#{__dirname}/../views")
+app.use express.static('views')
 
 # Index: links to the readme and examples.
 createRoute '/'
